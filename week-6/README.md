@@ -11,6 +11,6 @@ it happens when
 -  a parent component re render triggers all children re rendering ! ** IMP **
 
 
-## Now How do we Prevent unnecessary re renders ??
-
-
+What i learned this week :
+- React returns , rendering , keys importance , wrapper components , Lifecycle features from function components , memoization
+- Hoosk like  useMemo , useCallback 

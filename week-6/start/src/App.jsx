@@ -1,39 +1,47 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import WrapperCard from "./WrapperCard";
 
 function App() {
-const [name,setName] = useState('umer')
+  const [name, setName] = useState("umer");
   return (
     <div>
-      <br/>
+      <br />
       <button onClick={() => setName(Math.random())}>Click</button>
-      <br/>
+      <br />
       <h2>my name {name}</h2>
-      <br/>
-      <Header title="asinkect"/>
-      <HeaderwithButton/>
-      <Header title="Ramana"/>
-      <Header title="Ramana"/>
-      <Header title="Ramana"/>
-      <Header title="Ramana"/> <Header title="Ramana"/> <Header title="Ramana"/> <Header title="Ramana"/> <Header title="Ramana"/>
+      <br />
+      <Header title="asinkect" />
+      <HeaderwithButton />
+      <Header title="Ramana" />
+      <Header title="Ramana" />
+      <WrapperCard>
+        <Header title="Ramana" />
+      </WrapperCard>
+      <Header title="Ramana" />
+      <Header title="Ramana" />
+      <Header title="Ramana" />
+      <WrapperCard>
+        <Header title="Ramana" />
+      </WrapperCard>
+      <Header title="Ramana" />
+      <Header title="Ramana" />
+
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
 
 function HeaderwithButton() {
-  const [title,setTitle] = useState('test')
+  const [title, setTitle] = useState("test");
 
   return (
     <div>
       <button onClick={() => setTitle(Math.random())}>Click second</button>
     </div>
-  )
+  );
 }
 
 const Header = React.memo(function Header(props) {
-
-  return (
-    <div>I'm {props.title}</div>
-  )
-})
+  return <div>I'm {props.title}</div>;
+});
