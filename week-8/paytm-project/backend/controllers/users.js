@@ -1,7 +1,7 @@
 const zod = require('zod')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-
+const {User,Account} = require('../db')
 const signUpBody = zod.object({
     username: zod.string().email(),
 	firstName: zod.string(),
@@ -30,6 +30,16 @@ const signup  = async(req,res)=>{
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = await User.create({username,firstName,lastName,password:hashedPassword})
     
+    // ----------------------------------------
+    //giving random number to user for bank balance so later we don't have to intergrate with Bank
+
+        const randomBalance = Math.round(Math.random()*10000);
+        await Account.create({
+            user:newUser._id,
+            balance:randomBalance
+        })
+
+    // ----------------------------------- // 
     const token = jwt.sign({userId:newUser._id},process.env.JWTSECRET)
     res.status(200).json({
         message:"User Created Successfully",
