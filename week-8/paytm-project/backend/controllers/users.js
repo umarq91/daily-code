@@ -34,12 +34,15 @@ const signup  = async(req,res)=>{
     //giving random number to user for bank balance so later we don't have to intergrate with Bank
 
         const randomBalance = Math.round(Math.random()*10000);
-        await Account.create({
-            user:newUser._id,
+        const acc = await Account.create({
+            userId:newUser._id,
             balance:randomBalance
         })
+       
+        
 
     // ----------------------------------- // 
+
     const token = jwt.sign({userId:newUser._id},process.env.JWTSECRET)
     res.status(200).json({
         message:"User Created Successfully",

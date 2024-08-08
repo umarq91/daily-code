@@ -4,19 +4,21 @@ const {User} = require('../db')
 const { authMiddleware } = require('../middlewares/authMiddleware')
 
 
+router.post('/signup',signup)
 router.put('/',authMiddleware,updateUser);
 
-router.post('/signup',signup)
 
 router.post('/signin',signIn)
 
 
 router.get('/bulk', async (req, res) => {
     const filter = req.params.filter || ""
+    console.log(filter);
+    
  const users =   await User.find({
         $or: [
-            { name: { $regex: filter, $options: 'i' } },
-            { email: { $regex: filter, $options: 'i' } },
+            { firstName: { $regex: filter, $options: 'i' } },
+            { lastName: { $regex: filter, $options: 'i' } },
         ]
     })
 
