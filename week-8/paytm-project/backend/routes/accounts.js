@@ -48,7 +48,6 @@ const {amount,to} = req.body
 
 
         // perform operations
-// Perform the transfer
 await Account.updateOne({ userId: req.userId }, { $inc: { balance: -amount } }).session(session);
 await Account.updateOne({ userId: to }, { $inc: { balance: amount } }).session(session);
 
