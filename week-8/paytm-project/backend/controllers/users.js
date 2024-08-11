@@ -108,8 +108,30 @@ const signup  = async(req,res)=>{
             res.status(500).json({ message: 'Internal server error', error: error.message });
         }
     }
+
+    const bulk = async (req, res) => {
+        const filter = req.query.filter || ""
+           
+            
+     const users =   await User.find({
+            $or: [
+                { firstName: { $regex: filter, $options: 'i' } },
+                { lastName: { $regex: filter, $options: 'i' } },
+            ]
+        })
+    
+        res.json({
+            user: users.map(user => ({
+                username: user.username,
+                firstName: user.firstName,
+                lastName: user.lastName,
+                _id: user._id
+            }))
+        })
+    }
     module.exports={
         signup,
         signIn,
-        updateUser
+        updateUser,
+        bulk
     }

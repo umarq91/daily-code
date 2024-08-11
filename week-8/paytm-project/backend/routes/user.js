@@ -1,35 +1,18 @@
 const router = require('express').Router()
-const { signIn, signup, updateUser } = require('../controllers/users')
+const { signIn, signup, updateUser, bulk } = require('../controllers/users')
 const {User} = require('../db')
 const { authMiddleware } = require('../middlewares/authMiddleware')
 
 
-router.post('/signup',signup)
 router.put('/',authMiddleware,updateUser);
-
-
+router.post('/signup',signup)
 router.post('/signin',signIn)
+router.get('/bulk',bulk)
 
-
-router.get('/bulk', async (req, res) => {
-    const filter = req.params.filter || ""
-    console.log(filter);
-    
- const users =   await User.find({
-        $or: [
-            { firstName: { $regex: filter, $options: 'i' } },
-            { lastName: { $regex: filter, $options: 'i' } },
-        ]
-    })
-
-    res.json({
-        user: users.map(user => ({
-            username: user.username,
-            firstName: user.firstName,
-            lastName: user.lastName,
-            _id: user._id
-        }))
-    })
+router.get('/me',authMiddleware,async(req,res)=>{
+    const {userId} = req
+    const user = await User.findById(userId)
+    const {password, ...others} = user._doc
+    res.json(others)
 })
-
 module.exports=router
