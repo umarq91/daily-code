@@ -1,9 +1,10 @@
 // basically user will passs n number of seconds , then the request will go back there 
 
 
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 
-function useRefreshing(n) {
+export function useRefreshing(n) {
     const [todos, setTodos] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -20,9 +21,16 @@ function useRefreshing(n) {
         }
       };
 
-      setInterval(() => {
+      const interval = setInterval(() => {
           fetchTodos();
       },n*1000)
+
+      fetchTodos();
+
+
+      return ()=>{
+          clearInterval(interval)
+      }
     }, [n]);
   
     return { todos, loading, error };
