@@ -10,7 +10,7 @@ Since i was too inconsistant for last 2 months becasue of exams and stuff , I th
 - Comprehensive 0-100 Course
 - Additional curated resources
 
-## Week 6: React Deep Dive
+## Week 6: React Deep Dive // Completed
 
 ### Topics Covered
 - In-depth exploration of React rendering mechanisms
@@ -37,7 +37,7 @@ Since i was too inconsistant for last 2 months becasue of exams and stuff , I th
   - Understanding its core concepts
   - Practical implementation
 
-## Week 8: Recap and Project Development
+## Week 8: Recap and Project Development // Completed
 
 ### Recap
 - Review all concepts covered in previous weeks
@@ -46,14 +46,14 @@ Since i was too inconsistant for last 2 months becasue of exams and stuff , I th
 - Deep dive into Tailwind CSS
   - Advanced usage and best practices
 
-### Project: Building Paytm like app (End-to-End)
+### Project: Building Paytm like app (End-to-End) 
 - Implement end-to-end development of a Paytm-like application
 - Key Learning Outcomes:
   - Applying transaction management in databases
   - Utilizing the MERN stack 
 
 
-## Week 9
+## Week 9 // On going
   
   - Typescript basic to advance 
   - Custom Hooks
