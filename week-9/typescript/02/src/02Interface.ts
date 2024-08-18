@@ -27,3 +27,26 @@ console.log(greet1({
   age: 19,
   email: 'ch@gmail.com'
 }));
+
+// you can create a class which implements interface
+
+interface Person{
+  name:string,
+  age:number,
+  greet(phase:string):void
+}
+
+class Employe implements Person{
+  name:string;
+  age: number
+
+constructor(a:number,n:string){
+this.age=a;
+this.name=n;
+}
+
+greet(phase: string): void {
+  console.log(`${phase} by ${this.name} ` );
+  
+}
+}

@@ -1,0 +1,19 @@
+{
+  "name": "week-10",
+  "version": "1.0.0",
+  "description": "- Postgre Deep dive\r - Raw Queries\r - Prisma Deep Dive \r - Crud with Prisma",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/pg": "^8.11.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "pg": "^8.12.0"
+  }
+}

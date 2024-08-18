@@ -3,6 +3,7 @@
 // Interface: Interfaces can be extended using the extends keyword to inherit properties from other interfaces.
 // Type: Types can be used to define union types and intersection types.
 // Interface: Interfaces can be used to define object types, function types, and array types.
+  
 
 
 
