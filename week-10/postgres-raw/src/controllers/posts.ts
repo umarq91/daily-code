@@ -13,22 +13,32 @@ res.json(result.rows[0]);
 }
 }
 
-export const getPosts = async(req:Request,res:Response)=>{
-  
-try {
-  console.log(req.ip);
-  
-  let result = await client.query('SELECT * FROM posts');
-  res.json(result.rows);
-} catch (error) {
-  res.status(500).json({ error: 'Failed to load post' });
-}
-}
+export const getPosts = async (req: Request, res: Response) => {
+  try {
+    console.log(req.ip);
+
+    let result = await client.query("SELECT * FROM posts");
+    res.json(result.rows);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to load post" });
+  }
+};
 
 export const getSinglePost = async(req:Request,res:Response)=>{
   try {
     
-    const result = await client.query(`SELECT * FROM posts JOIN users ON posts.author_id = users.id  WHERE id = $1`,[req.params.id])
+    const { id } = req.params;
+    const result = await client.query(
+      `SELECT posts.*, users.username, users.email 
+      FROM posts 
+      JOIN users ON posts.author_id = users.id 
+      WHERE posts.id = $1`, 
+      [id]
+    );
+
+       if (result.rows.length === 0) {
+        return res.status(404).json({ message: "Post not found" });
+      }
     res.json(result.rows[0]);
   } catch (error) {
     

@@ -1,5 +1,5 @@
 import express,{Request,Response} from "express";
-import { createPost, getPosts, getSinglePost } from "../middlewares/posts";
+import { createPost, getPosts, getSinglePost } from "../controllers/posts";
 
 const router = express.Router();
 
