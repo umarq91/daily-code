@@ -3,13 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.js",
- "scripts": {
-  "start": "node ./dist/index.js",
-  "build": "tsc",
-  "dev": "nodemon"
-}
-,
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "build": "tsc",
+    "dev": "nodemon"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/pg": "^8.11.6",
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
 }
