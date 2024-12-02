@@ -90,3 +90,6 @@ Since i was too inconsistant for last 2 months becasue of exams and stuff , I th
     - PRisma as ORM
     - Postgres
     - Jwt for auth(cookies)
+
+
+Will do docker end-to-end
