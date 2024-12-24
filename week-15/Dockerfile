@@ -1,12 +1,16 @@
-FROM node:20-alpine
+FROM node:20
 
 WORKDIR /app
 
+COPY package*.json .
+COPY prisma ./prisma
+RUN npm install
+RUN npx prisma generate
+
+
 COPY . .
 
-RUN npm install
 RUN npm run build
-RUN npx prisma generate
 
 EXPOSE 3000
 
