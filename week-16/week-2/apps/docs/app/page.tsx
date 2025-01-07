@@ -1,6 +1,5 @@
 import Image, { type ImageProps } from "next/image";
 import { Button } from "@repo/ui/button";
-import { CustomButton } from "@repo/ui/custom";
 import styles from "./page.module.css";
 
 type Props = Omit<ImageProps, "src"> & {
@@ -66,9 +65,6 @@ export default function Home() {
         </div>
         <Button appName="docs" className={styles.secondary}>
           Open alert
-        </Button>
-        <Button appName="docs" className={styles.secondary}>
-         Custom
         </Button>
       </main>
       <footer className={styles.footer}>
