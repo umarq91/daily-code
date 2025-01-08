@@ -87,9 +87,31 @@ Since i was too inconsistant for last 2 months becasue of exams and stuff , I th
     - Cloudflare workers in backend
     - zod , interfaces on frontend types
     - Typescript
-    - PRisma as ORM
-    - Postgres
-    - Jwt for auth(cookies)
+ 
+- ## Week 14 
 
+### Next Js
+
+
+## Week 15
+
+### Docker end to end 
+- Docker 101
+- Docker compose
+- Docker push
+- docker execute
+- bind mounts
+
+
+  ## Week 16
+
+### MONOREPOS and TURBOPEPOS
+- Learn How Monorepos works
+- What is Monorepo frameworks
+- How turborepo is different from other frameworks
+
+
+ 
+ 
 
 Will do docker end-to-end
