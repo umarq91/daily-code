@@ -1,5 +1,5 @@
 # Full Stack Development Mastery Plan
-Since i was too inconsistant for last 2 months becasue of exams and stuff , I thought this might be a good idea to hon my skils and learn more this 
+Since i was too inconsistant for last 2 months becasue of exams and stuff , I thought this might be a good idea to hon my skils and learn more this ,
 ## Objectives
 - Master Full Stack Development
 - Acquire proficiency in DevOps (from basic to advanced, including AWS)
