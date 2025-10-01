@@ -19,3 +19,12 @@ describe("multiplication", () => {
     expect(res.status).toBe(200);
   });
 });
+
+describe("minus", () => {
+  it("Should minus two values correctly", async () => {
+    const res = await request(app).post("/minus").send({ a: 10, b: 40 });
+
+    expect(res.body.data).toBe(-30);
+    expect(res.status).toBe(200);
+  });
+});

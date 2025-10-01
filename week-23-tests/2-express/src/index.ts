@@ -21,3 +21,10 @@ app.post("/multiply", (req, res) => {
 
   res.json({ data: result });
 });
+
+app.post("/minus", (req, res) => {
+  const { a, b } = req.body;
+  const result = a - b;
+
+  res.json({ data: result });
+});
